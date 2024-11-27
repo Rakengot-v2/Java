@@ -1,3 +1,6 @@
+import lombok.Getter;
+
+@Getter
 public class Product {
     private int id;
     private String name;
@@ -11,26 +14,6 @@ public class Product {
         this.price = price;
         this.description = description;
         this.category = category;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public Category getCategory() {
-        return category;
     }
 
     @Override

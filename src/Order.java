@@ -1,35 +1,20 @@
+import lombok.Getter;
+import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class Order {
-    private List<Product> products; // List of products in the order
-    private double totalPrice; // Total price of the order
-    private String status; // Order status
+    private List<Product> products;
+    private double totalPrice;
+
+    @Setter
+    private String status;
 
     public Order(Cart cart) {
         this.products = new ArrayList<>(cart.getProducts()); // Copy products from cart
         this.totalPrice = cart.getTotalPrice();
-        this.status = "New"; // Default status when the order is created
-    }
-
-    // Set the status of the order
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    // Get the list of products in the order
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    // Get the total price of the order
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    // Get the status of the order
-    public String getStatus() {
-        return status;
+        this.status = "New";
     }
 
     @Override

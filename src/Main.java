@@ -62,6 +62,7 @@ public class Main {
                         System.out.println("Your cart is empty. Please add items before placing an order.");
                     } else {
                         Order order = new Order(cart);
+                        order.setStatus("Completed");
                         orderHistory.addOrder(order);
                         System.out.println("Order placed:");
                         System.out.println(order);
